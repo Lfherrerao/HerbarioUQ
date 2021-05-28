@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/templateRecolector.xhtml">
+	<ui:define name="contenido">
+	<h:outputStylesheet>
+        .ui-panelgrid, .ui-panelgrid td, .ui-panelgrid tr, .ui-panelgrid tbody tr td
+        {
+            border: none !important;
+            border-style: none !important;
+            border-width: 0px !important;
+        }
+    </h:outputStylesheet>
+
+		<style type="text/css">
+.value {
+	font-weight: bold;
+}
+</style>
+
+		<body>
+			<BR />	
+	<h1><h:form>
+		<p:panelGrid columns="2" cellpadding="1">
+			<f:facet name="header">Registrar Planta</f:facet>
+			<h:outputLabel>nombre:</h:outputLabel>
+			<h:inputText value="#{plantaBean.nombre}" required="true"
+				requiredMessage="el campo nombre esta vacio" />
+
+
+			<h:outputLabel>color:</h:outputLabel>
+			<h:inputText value="#{plantaBean.color}" required="true"
+				requiredMessage="el campo color esta vacio" />
+
+
+
+			<h:outputLabel>Genero:</h:outputLabel>
+			<p:selectOneMenu value="#{plantaBean.genero}" converter="#{generoConverter}">
+				<f:selectItem itemLabel="seleccione un genero"
+					noSelectionOption="true" />
+				<f:selectItems value="#{plantaBean.generos}" />
+				
+			</p:selectOneMenu >
+		</p:panelGrid>
+		<p:commandButton action="#{plantaBean.registrarPlanta}"
+			value="Aceptar" />
+
+	</h:form>
+	
+	<h:messages />
+	<br /></h1>
+	
+	</body>
+	</ui:define>
+	
+</ui:composition>
+</html>

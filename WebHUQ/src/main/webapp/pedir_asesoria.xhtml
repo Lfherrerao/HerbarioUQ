@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/WEB-INF/templateRecolector.xhtml">
+
+	<meta charset="UTF-8" />
+	<ui:define name="title">Solicitar Asesoría</ui:define>
+
+
+	<ui:define name="contenido">
+		<h:outputStylesheet>
+        .ui-panelgrid, .ui-panelgrid td, .ui-panelgrid tr, .ui-panelgrid tbody tr td
+        {
+            border: none !important;
+            border-style: none !important;
+            border-width: 0px !important;
+        }
+    </h:outputStylesheet>
+
+		<style type="text/css">
+.value {
+	font-weight: bold;
+}
+</style>
+		<body>
+
+			<h4>Los campos de este formulario son obligarotios</h4>
+			<h:form>
+				<p:panelGrid columns="2">
+					<f:facet name="header">Solicitar Asesoría</f:facet>
+
+					<label>Cedula Recolector:</label>
+					<p:inputText id="asesoriaCliente"
+						placeholder="Ingrese su número de documento sin puntos"
+						required="true"
+						requiredMessage="Necesitamos tu número de documento"
+						value="#{asesoriaBean.seguridadBean.usuario.cedula}"
+						style="width:100%" disabled="true" />
+						
+						
+						
+						<p:outputLabel for="pregunta" value="prregunta:" />
+					<p:inputTextarea id="pregunta" required="true"
+						requiredMessage="es necesario preguntar algo" type="text"
+						value="#{asesoriaBean.pregunta}" />
+						
+						
+					<label>Empleado:</label>
+					<p:selectOneMenu value="#{asesoriaBean.empleado}"
+						converter="selectItemObjectConverter" required="true"
+						requiredMessage="Debes seleccionar un empleado">
+						<f:selectItem itemLabel="Seleccione un empleado"
+							noSelectionOption="true"></f:selectItem>
+						<f:selectItems value="#{asesoriaBean.empleados}" var="empleado"
+							itemValue="#{empleado}"
+							itemLabel="#{empleado.nombre} #{empleado.apellido}" />
+					</p:selectOneMenu>
+
+
+
+					<p:commandButton ajax="false" icon="fa fa-save" value="Aceptar"
+						action="#{asesoriaBean.crearAsesoria}" />
+				</p:panelGrid>
+			</h:form>
+		</body>
+	</ui:define>
+</ui:composition>
+</html>

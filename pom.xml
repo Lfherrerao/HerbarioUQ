@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>co.edu.analisis2.co</groupId>
+  <artifactId>HerbarioUQ</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <name>herbarioUQ</name>
+  <description>aqui se encuentran todas las capas de el herbario uq</description>
+  
+  <build>
+		<pluginManagement>
+			<plugins>
+
+				<!-- Establecer la version de java a ser usada por los proyectos -->
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.7.0</version>
+					<configuration>
+						<source>1.8</source>
+						<target>1.8</target>
+					</configuration>
+
+				</plugin>
+				<!-- Establecer la version de EAR a ser usada -->
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ear-plugin</artifactId>
+					<version>2.10.1</version>
+					<configuration>
+						<version>7</version>
+						<defaultLibBundleDir>lib</defaultLibBundleDir>
+						<defaultJavaBundleDir>lib/</defaultJavaBundleDir>
+						<skinnyWars>true</skinnyWars>
+						<generateModuleId>true</generateModuleId>
+						<fileNameMapping>no-version</fileNameMapping>
+						<archive>
+							<manifest>
+								<addClasspath>true</addClasspath>
+							</manifest>
+						</archive>
+					</configuration>
+				</plugin>
+
+				<!-- Establecer la version de EJB -->
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-ejb-plugin</artifactId>
+					<version>3.0.0</version>
+					<configuration>
+						<ejbVersion>3.2</ejbVersion>
+					</configuration>
+				</plugin>
+
+				<!-- Establecer la version de WAR -->
+
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<version>3.2.0</version>
+					<configuration>
+						<failOnMissingWebXml>false</failOnMissingWebXml>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+  <modules>
+  	<module>PersistenciaHUQ</module>
+  	<module>PruebasHUQ</module>
+  	<module>NegocioHUQ</module>
+  	<module>EarHUQ</module>
+  	<module>EscritorioHUQ</module>
+    <module>WebHUQ</module>
+  </modules>
+</project>

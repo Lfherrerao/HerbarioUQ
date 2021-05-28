@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+<head>
+<meta charset="UTF-8" />
+<title>HerbarioHUQ</title>
+</head>
+<h:body >
+	<div align="center">
+
+	<h:form>
+		<FONT FACE="impact" SIZE="6" COLOR="geen"> bienvenido al Herbario de la universidad del Quindio</FONT>
+		<br/>
+		<FONT FACE="impact" SIZE="6" COLOR="geen"> como desea ingresar?</FONT>
+
+		<h:panelGrid columns="2" cellpadding="10">
+
+
+			<h:commandButton action="indexRecolector" value="RECOLECTOR" />
+			
+			<h:commandButton action="indexAdministrador"  value="EMPLEADO" />
+
+		</h:panelGrid>
+		<a href="registrar_Recolector.xhtml"> registrarse como nuevo
+			recolector </a>
+
+	</h:form>
+	<h:messages />
+	<br />
+	
+	</div>
+</h:body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<head>
+<meta charset="UTF-8" />
+<title>Registrar Recolector</title>
+</head>
+<h:body>
+
+	<div align="center">
+		<f:view>
+			<h:form>
+
+				<FONT FACE="impact" SIZE="6" COLOR="green"> Formulario
+					Registro Recolector</FONT>
+				<hr />
+				
+
+				<h:panelGrid columns="2">
+
+					<label for="nombre" style="font-size: 25px; width: 175px;">Nombre
+					</label>
+					<input id="nombre" type="text" jsf:value="#{recolectorBean.nombre}"
+						style="font-size: 20px; width: 175px;" />
+
+
+					<label for="apellido" style="font-size: 25px; width: 175px;">Apellidos</label>
+					<input id="apellido" type="text"
+						jsf:value="#{recolectorBean.apellido}"
+						style="font-size: 20px; width: 175px;" />
+
+
+
+					<label for="cedula" style="font-size: 25px; width: 175px;">Cedula:</label>
+					<input id="cedula" type="text" jsf:value="#{recolectorBean.cedula}"
+						style="font-size: 20px; width: 175px;" />
+
+					<label for="telefono" style="font-size: 25px; width: 175px;">Telefono:</label>
+					<input id="telefono" type="text"
+						jsf:value="#{recolectorBean.telefono}"
+						style="font-size: 20px; width: 175px;" />
+
+
+					<label for="correo" style="font-size: 25px; width: 175px;">E-mail</label>
+					<input id="correo" type="text" jsf:value="#{recolectorBean.correo}"
+						style="font-size: 20px; width: 175px;" />
+
+
+					<label for="contrasenia" style="font-size: 25px; width: 175px;">Contraseña</label>
+					<input id="contrasenia" type="password"
+						jsf:value="#{recolectorBean.contrasenia}"
+						style="font-size: 20px; width: 175px;" />
+
+
+
+				</h:panelGrid>
+				<h:commandButton action="#{recolectorBean.registrar}"
+					value="registrar" />
+
+				<h:commandButton action="inicio" value="Regresar" />
+
+
+
+			</h:form>
+			<h:messages />
+			<br />
+		</f:view>
+	</div>
+</h:body>
+</html>

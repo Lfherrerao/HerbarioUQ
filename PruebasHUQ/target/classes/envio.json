@@ -1,0 +1,25 @@
+{
+	"ENVIO": [
+		{
+			"radicado": 1,
+			"estado": "EN_ESTUDIO",
+			"fechaenvio": "2019-09-12",
+			"justificacion": "nada",
+			"persona_cedula": "323456789"
+		},
+		{
+			"radicado": 2,
+			"estado": "ACEPTADO",
+			"fechaenvio": "2019-09-19",
+			"justificacion": "nada",
+			"persona_cedula": "323456789"
+		},
+		{
+			"radicado": 3,
+			"estado": "RECHAZADO",
+			"fechaenvio": "2019-09-19",
+			"justificacion": "nada",
+			"persona_cedula": "323456789"
+		}
+	]
+}

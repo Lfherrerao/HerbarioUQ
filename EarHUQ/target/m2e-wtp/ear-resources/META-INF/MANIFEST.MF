@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Built-By: LENOVO
+Class-Path: NegocioHUQ-0.0.1-SNAPSHOT.jar PersistenciaHUQ-0.0.1-SNAPSH
+ OT.jar
+Build-Jdk: 1.8.0_201
+Created-By: Maven Integration for Eclipse
+

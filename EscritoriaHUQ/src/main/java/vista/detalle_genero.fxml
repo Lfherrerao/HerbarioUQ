@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="425.0" prefWidth="561.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controlador.GeneroControlador">
+   <children>
+      <SplitPane layoutX="10.0" layoutY="9.0" prefHeight="389.0" prefWidth="200.0">
+         <items>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="387.0" prefWidth="105.0">
+               <children>
+                  <TableView fx:id="tablaGenero" layoutX="4.0" prefHeight="416.0" prefWidth="191.0">
+                     <columns>
+                        <TableColumn fx:id="idColumna" prefWidth="90.0" text="Id" />
+                        <TableColumn fx:id="nombreColumna" prefWidth="125.0" text="Nombre" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <AnchorPane layoutX="210.0" layoutY="10.0" prefHeight="393.0" prefWidth="333.0">
+         <children>
+            <GridPane layoutX="8.0" layoutY="73.0" prefHeight="111.0" prefWidth="304.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="147.0" minWidth="10.0" prefWidth="96.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="240.0" minWidth="10.0" prefWidth="208.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label text="Id:" />
+                  <Label text="Nombre:" GridPane.rowIndex="1" />
+                  <Label text="Descripcion:" GridPane.rowIndex="2" />
+                  <Label fx:id="txtId" text="Label" GridPane.columnIndex="1" />
+                  <Label fx:id="txtNombre" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label fx:id="txtDescripcion" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Familia" GridPane.rowIndex="3" />
+                  <Label fx:id="txtFamilia" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+            <Button layoutX="36.0" layoutY="344.0" mnemonicParsing="false" onAction="#agregarGenero" text="Agrerar">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="105.0" layoutY="344.0" mnemonicParsing="false" onAction="#elimiarGenero" text="Eliminar">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="173.0" layoutY="344.0" mnemonicParsing="false" onAction="#editarGenero" text="Editar">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Label layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="179.0" text="Detalle Genero">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Button layoutX="231.0" layoutY="344.0" mnemonicParsing="false" onAction="#inicio" text="Inicio">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

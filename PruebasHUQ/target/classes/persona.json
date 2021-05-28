@@ -1,0 +1,46 @@
+{
+	"PERSONA": [
+		{
+			"cedula": "123456789",
+			"dtype": "Administrador",
+			"nombre": "Pedro Perez",
+			"apellido": "martinez",
+			"correo": "pperez@mail.com",
+			"contrasenia": "12345",
+			"telefono": "12"
+		},
+		{
+			"cedula": "223456789",
+			"dtype": "Empleado",
+			"nombre": "Maria Martinez",
+			"apellido": "keil",
+			"correo": "mmartinez@mail.com",
+			"contrasenia": "12345",
+			"telefono": "12"
+		},
+		{
+			"cedula": "323456789",
+			"dtype": "Recolector",
+			"nombre": "Hernan Hernandez",
+			"apellido": "keil",
+			"correo": "hhernandez@mail.com",
+			"contrasenia": "12345",
+			"telefono": "12"
+		}
+	],
+	"EMPLEADO": [
+		{
+			"cedula": "223456789"
+		}
+	],
+	"ADMINISTRADOR": [
+		{
+			"cedula": "123456789"
+		}
+	],
+	"RECOLECTOR": [
+		{
+			"cedula": "323456789"
+		}
+	]
+}

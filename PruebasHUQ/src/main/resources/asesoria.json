@@ -1,0 +1,11 @@
+{
+	"ASESORIA": [
+		{
+			"radicado": 1,
+			"pregunta": "que paso",
+			"respuesta": "nada",
+			"emisor_cedula": "323456789",
+			"receptor_cedula": "223456789"
+		}
+	]
+}

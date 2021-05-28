@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+<title><ui:insert name="title">herbario HUQ</ui:insert></title>
+</h:head>
+
+<h:body>
+
+
+
+	<div id="header">
+		
+	</div>
+
+
+	<h:panelGroup rendered="#{!seguridadBean.autenticado}">
+		<ui:insert name="login">
+			<h:form>
+				<p:panelGrid columns="2">
+				<f:facet name="header">Iniciar sesion</f:facet>
+					<p:outputText value="Login" />
+					<p:inputText value="#{seguridadBean.usuario.correo}" />
+					<p:outputText value="Clave" />
+					<p:inputSecret value="#{seguridadBean.usuario.contrasenia}" />
+					
+				</p:panelGrid>
+				<h:commandButton value="Aceptar"
+					action="#{seguridadBean.iniciarSesionComoRecolector}" />
+			</h:form>
+		</ui:insert>
+	</h:panelGroup>
+
+
+	<h:panelGroup rendered="#{seguridadBean.iniciarSesionComoRecolector}">
+		<ui:insert name="menu">
+				<h:form>
+					<p:menubar>
+						<f:facet name="options">
+							<p:commandButton value="Inicio" action="/index" ajax="false" />
+						</f:facet>
+						<p:submenu label="Empleado" icon="#{resource['cabecera.gif']}">
+							<p:menuitem value="Registrar Empleado" icon="pi pi-search" ajax="false" />
+							<p:menuitem value="Eliminar Empleado" ajax="false" />
+							<p:menuitem value="Modificar Empleado" ajax="false" />
+							<p:menuitem value="Listar Empleado" ajax="false" />
+						</p:submenu>
+						<p:submenu label="Recolector">
+							<p:menuitem value="Registrar Recolector" ajax="false" />
+							<p:menuitem value="Eliminar Recolector" ajax="false" />
+							<p:menuitem value="Modificar Recolector" ajax="false" />
+							<p:menuitem value="Listar Recolector" ajax="false" />
+						</p:submenu>
+						<p:submenu label="Envio">
+							<p:menuitem value="Registrar Envio" ajax="false" />
+							<p:menuitem value="Modificar Envio" ajax="false" />
+						</p:submenu>
+						
+						<p:menuitem value="Cerrar sesión" ajax="false" />
+					</p:menubar>
+				</h:form>
+			</ui:insert>
+	</h:panelGroup>
+
+</h:body>
+
+</html>

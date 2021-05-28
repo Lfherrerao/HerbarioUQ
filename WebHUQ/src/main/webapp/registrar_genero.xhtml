@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<head>
+<meta charset="UTF-8" />
+<title>Registrar Genero</title>
+</head>
+<body style="background-color:#CCFFFF;">
+
+	<h:form>
+		<h:panelGrid columns="2" cellpadding="5">
+			<f:facet name="header">Registrar Genero</f:facet>
+			<h:outputLabel>nombre:</h:outputLabel>
+			<h:inputText value="#{generoBean.nombre}" required="true"
+				requiredMessage="el campo nombre esta vacio" />
+
+
+			<h:outputLabel>descripcion:</h:outputLabel>
+			<h:inputTextarea rows="4" cols="30" value="#{generoBean.descripcion}"
+				required="true" requiredMessage="el campo descripcion esta vacio" />
+
+
+
+			<h:outputLabel>Familia:</h:outputLabel>
+			<h:selectOneMenu value="#{generoBean.familia}"
+				converter="#{familiaConverter}">
+				<f:selectItem itemLabel="seleccione un genero"
+					noSelectionOption="true" />
+				<f:selectItems value="#{generoBean.familias}" />
+			</h:selectOneMenu>
+		</h:panelGrid>
+
+		<h:commandButton action="#{generoBean.registrar}" value="Aceptar" />
+
+	</h:form>
+	<h:messages style="rojo" />
+	<br />
+
+</body>
+</html>

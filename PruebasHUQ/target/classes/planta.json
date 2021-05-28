@@ -1,0 +1,28 @@
+{
+	"PLANTA": [
+		{
+			"id": 2,
+			"color": "rojo",
+			"especie": "especie",
+			"nombre": "kana",
+			"genero_id": 1,
+			"envio_radicado": 1
+		},
+		{
+			"id": 3,
+			"color": "rojo",
+			"especie": "especie",
+			"nombre": "kana",
+			"genero_id": 1,
+			"envio_radicado": 2
+		},
+		{
+			"id": 4,
+			"color": "rojo",
+			"especie": "especie",
+			"nombre": "kana",
+			"genero_id": 1,
+			"envio_radicado": 3
+		}
+	]
+}

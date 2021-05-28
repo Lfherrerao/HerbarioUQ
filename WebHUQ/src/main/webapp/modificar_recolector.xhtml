@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+
+<ui:composition template="/WEB-INF/templateRecolector.xhtml">
+
+	<meta charset="UTF-8" />
+	<ui:define name="title">Modificar </ui:define>
+	<ui:define name="contenido">
+
+
+
+		<h:outputStylesheet>
+        .ui-panelgrid, .ui-panelgrid td, .ui-panelgrid tr, .ui-panelgrid tbody tr td
+        {
+            border: none !important;
+            border-style: none !important;
+            border-width: 0px !important;
+        }
+    </h:outputStylesheet>
+
+		<style type="text/css">
+.value {
+	font-weight: bold;
+}
+</style>
+
+		<body>
+			<BR />
+			<h:form id="formCliente">
+				<p:panelGrid columns="2">
+					<f:facet name="header">Modificar Recolector</f:facet>
+			
+
+					<p:outputLabel for="nombre" value="Nombre:" />
+					<p:inputText id="nombre" required="true"
+						requiredMessage="Los nombres son obligatorios" type="text"
+						value="#{recolectorBean.nombre}" />
+
+					<p:outputLabel for="apellido" value="Apellidos:" />
+					<p:inputText id="apellido" required="true"
+						requiredMessage="Los apellidos son obligatorios" type="text"
+						value="#{recolectorBean.apellido}" />
+
+
+					<p:outputLabel for="correo" value="Correo:" />
+					<p:inputText id="correo" required="true"
+						requiredMessage="Es necesario tu correo electrónico"
+						validatorMessage="El formato del email es incorrecto" type="text"
+						value="#{recolectorBean.correo}">
+						<f:validateRegex
+							pattern="^[_A-Za-z0-9-\+]+(\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\.[A-Za-z0-9]+)*(\.[A-Za-z]{2,})$" />
+					</p:inputText>
+
+					<p:outputLabel for="telefono" value="Teléfono:" />
+					<p:inputText id="telefono" maxlength="10" required="true"
+						onkeypress="if(event.which &lt; 48 || event.which &gt; 57) return false;"
+						requiredMessage="Es necesario tu teléfono" type="text"
+						value="#{recolectorBean.telefono}" />
+
+
+
+					<p:outputLabel for="contrasenia" value="Contraseña:" />
+					<p:inputText id="contrasenia" required="true"
+						requiredMessage="Es necesario tu contraseña" type="text"
+						value="#{recolectorBean.contrasenia}" />
+
+
+					<p:commandButton ajax="false" icon="fa fa-pen-square"
+						value="Modificar" action="#{recolectorBean.modificarRecolector}" />
+						
+	
+
+				</p:panelGrid>
+				
+				<p:growl id="messages" showDetail="true" />
+			</h:form>
+		</body>
+
+
+	</ui:define>
+
+</ui:composition>
+</html>

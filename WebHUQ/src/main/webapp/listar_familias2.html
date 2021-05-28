@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="/WEB-INF/templateAdministrador.xhtml">
+	<ui:define name="contenido">
+	    <h:form id="familiaForm">
+			
+			<p:fieldset id="familias" legend="familias registradas">
+				<p:dataTable id="listafamilias" var="familia" value="#{familiaBean.familias}">
+				
+					<p:column headerText="Id">
+						<h:outputText value="#{familia.id}" />
+					</p:column>
+				
+					<p:column headerText="Nombre">
+						<h:outputText value="#{familia.nombre}" />
+					</p:column>
+					
+					<p:column style="width:32px">
+	                    <p:commandButton update=":familiaForm:display" oncomplete="PF('familiaDialog').show()" icon="pi pi-search">
+	                        <f:setPropertyActionListener value="#{familia}" target="#{familiaBean.familia}" />
+	                    </p:commandButton>
+                	</p:column>
+					
+				</p:dataTable>
+			</p:fieldset>
+			
+			
+			<p:dialog header="Detalle de familia" widgetVar="familiaDialog" resizable="false" draggable="false"
+              showEffect="fade" hideEffect="fade" modal="true">
+		        <p:outputPanel id="display">
+		            <h:panelGrid columns="2" cellpadding="4" rendered="#{not empty familiaBean.familia}">
+		                
+		                <h:outputText value="Id" />
+		                <h:outputText value="#{familiaBean.familia.id}" style="font-weight:bold"/>
+		 
+		                <h:outputText value="Nombre:" />
+		                <h:outputText value="#{familiaBean.familia.nombre}" style="font-weight:bold"/>
+		 		                
+		                
+		                
+		            </h:panelGrid>
+		        </p:outputPanel>
+    		</p:dialog>
+			
+		</h:form>
+		<p:growl />
+	</ui:define>
+</ui:composition>
+</html>

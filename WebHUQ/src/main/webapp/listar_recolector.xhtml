@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+<ui:composition template="/WEB-INF/templateAdministrador.xhtml">
+	<ui:define name="contenido">
+
+
+		<h:form id="recolectorForm">
+			<p:fieldset id="recolectores" legend="Recolectores Registrados">
+
+				<p:dataTable id="listaRecolectores" var="recolector"
+					value="#{recolectorBean.recolectores}">
+					
+					<p:column style="width:110px" headerText="Id">
+						<h:outputText value="#{recolector.cedula}" />
+					</p:column>
+
+					<p:column style="width:110px" headerText="Nombre" >
+						<h:outputText value="#{recolector.nombre}" />
+					</p:column>
+					
+					<p:column style="width:110px" headerText="clave" >
+						<h:outputText value="#{recolector.apellido}" />
+					</p:column>
+					
+					
+					<p:column style="width:30px">
+						<p:commandButton update=":recolectorForm:display" oncomplete="PF('recolectorDialog').show()" icon="pi pi-search">
+							<f:setPropertyActionListener value="#{recolector}" target="#{recolectorBean.recolector}" />
+						</p:commandButton>
+					</p:column>
+
+				</p:dataTable>
+			</p:fieldset>
+			
+			
+			
+			<p:dialog header="Detalle de Recolector" widgetVar="recolectorDialog" resizable="false" draggable="false"
+			 showEffect="fade" hideEffect="fade" modal="true">
+			 
+				<p:outputPanel id="display">
+					<h:panelGrid columns="2" cellpadding="4" rendered="#{not empty recolectorBean.recolector}">
+
+						<h:outputText value="Id" />
+						<h:outputText value="#{recolectorBean.recolector.cedula}" style="font-weight:bold" />
+
+						<h:outputText value="Nombre:" />
+						<h:outputText value="#{recolectorBean.recolector.nombre}"
+							style="font-weight:bold" />
+
+						<f:facet name="footer">
+							<h:commandButton value="Eliminar" ajax="false"
+							action="#{recolectorBean.eliminarRecolector}"
+								/>
+							
+						</f:facet>
+
+					</h:panelGrid>
+				</p:outputPanel>
+			</p:dialog>
+			
+			
+			
+			
+			
+			
+			
+					
+		</h:form>
+		<p:growl />
+	</ui:define>
+</ui:composition>
+</html>

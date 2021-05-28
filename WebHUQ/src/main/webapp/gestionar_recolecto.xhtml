@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="/WEB-INF/templateAdministrador.xhtml">
+	<ui:define name="contenido">
+	
+		<br />
+		<br />
+		<br />
+		<br />
+		<h:form>
+			<p:panelGrid columns="2">
+			
+			<f:facet name="header">Modificar Recolector</f:facet>
+
+				   <p:outputLabel value="Recolector" />
+				   
+				 <p:selectOneMenu value="#{recolectorBean.recolector}"
+					converter="#{recolectorConverter}">
+					<f:selectItem itemLabel="Seleccione una recolector a modificar"
+						noSelectionOption="true" />
+					<f:selectItems value="#{recolectorBean.recolectores}" />
+				  </p:selectOneMenu>
+				  
+				     <p:outputLabel value="Nombre" />
+				   <p:inputText value="#{recolectorBean.nombre}" />
+				   <p:outputLabel value="Clave" />
+				   <p:inputText value="#{recolectorBean.contrasenia}" />
+				   <p:outputLabel value="Email" />
+				   <p:inputText value="#{recolectorBean.correo}" />
+				   
+				<f:facet name="footer">
+					<h:commandButton action="#{recolectorBean.modificarRecolector}" value="enviar" ajax="false" />		
+				</f:facet>
+				
+			
+				
+				
+				
+			</p:panelGrid>
+		</h:form>
+		<p:growl />
+	</ui:define>
+</ui:composition>
+</html>

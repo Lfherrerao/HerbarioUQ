@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/application_7.xsd" version="7">
+  <description>aqui se encuentran todas las capas de el herbario uq</description>
+  <display-name>EarHUQ</display-name>
+  <module id="EJB_co.edu.analisis2.co.NegocioHUQ">
+    <ejb>NegocioHUQ.jar</ejb>
+  </module>
+  <module id="WAR_co.edu.analisis2.co.WebHUQ">
+    <web>
+      <web-uri>WebHUQ.war</web-uri>
+      <context-root>/WebHUQ</context-root>
+    </web>
+  </module>
+  <library-directory>lib</library-directory>
+</application>
